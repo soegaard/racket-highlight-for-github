@@ -1,0 +1,72 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+##Parsing YAML... (/Users/soegaard/Library/Application Support/Sublime Text 3/Packages/User/racket.YAML-tmLanguage)
+##Writing Property List... (/Users/soegaard/Library/Application Support/Sublime Text 3/Packages/User/racket.tmLanguage)
+##[Finished in 0.011s]
+
+# name of the programming language
+name: Racket (soegaard)
+# the name of the top level scope
+scopeName: source.racket
+# list of file extensions without the leading dot
+fileTypes: [rkt]
+# An unique identifier for this syntax definition.
+uuid: c5160d97-e918-473b-a594-3d22afffc0a7
+
+
+
+
+patterns:
+# comment - optional comment about patterns
+# name    - the name of the scope
+# match   - a regular expression (in Onigurama syntax - sigh)
+
+###
+### DATUMS
+###
+
+
+- comment: string datums
+  name: string.quoted.double
+  match: \"[^"]*\"
+
+###
+### IDENTIFIERS
+###
+
+- comment: identifiers
+  name: variable
+  match: ([^\(\)\[\]{}",'`;#][^\(\)\[\]{}",'`;]*)
+
+
+###
+### COMMENTS
+###
+
+# line comment
+- comment: ; comments begins with ; and extends to the end of the line
+  name: comment.line.semicolon
+  match: ;.*$
+
+# use two spaces for indentation - yaml syntax is indentation 
+#- comment: Tab stops like $1, $2...
+#  name: keyword.other.racket
+# match: \$\d+
+
+#- comment: Variables like $PARAM1, $TM_SELECTION
+#  name: keyword.other.racket
+
+
+# Capture groups are numbered 
+#   - this makes its possible to color different parts of a match in different colors
+#   - the capture group 0 refers to the whole match
+
+#- comment: Variables like $PARAM1, $TM_SELECTION
+#  name: keyword.other.racket
+#  match: \$([A-Za-z][A-Za-z0-9_]+)
+#  captures:
+#    '1': {name: constant.numeric.racket}
+
+
+
+

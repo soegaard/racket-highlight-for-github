@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>rkt</string>
+	</array>
+	<key>name</key>
+	<string>Racket (soegaard)</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>string datums</string>
+			<key>match</key>
+			<string>\"[^"]*\"</string>
+			<key>name</key>
+			<string>string.quoted.double</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>identifiers</string>
+			<key>match</key>
+			<string>([^\(\)\[\]{}",'`;#][^\(\)\[\]{}",'`;]*)</string>
+			<key>name</key>
+			<string>variable</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>; comments begins with ; and extends to the end of the line</string>
+			<key>match</key>
+			<string>;.*$</string>
+			<key>name</key>
+			<string>comment.line.semicolon</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.racket</string>
+	<key>uuid</key>
+	<string>c5160d97-e918-473b-a594-3d22afffc0a7</string>
+</dict>
+</plist>

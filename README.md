@@ -16,3 +16,5 @@ To develop a lexer:
   - install https://github.com/SublimeText/AAAPackageDev
     (Just make copy of AAAPackageDev in the folder described in syntaxdefs.html)
   - After editing the Racket definitions hit F7 and change to tab with Racket file to see the results.
+  - Place curson on top of interesting syntax in a rkt file.
+    cmd+alt+P  will show the detected scope (type) in the status line at the bottom.

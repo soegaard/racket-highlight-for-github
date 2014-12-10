@@ -1,8 +1,12 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 ---
+
+### Sublime Text 3 was used to write the racket.YAML-tmLanguage file.
+### Cmd+F7 invokes a conversion from YAML to plist format. The result is in racket.tmLanguage.
+
 ##Parsing YAML... (/Users/soegaard/Library/Application Support/Sublime Text 3/Packages/User/racket.YAML-tmLanguage)
 ##Writing Property List... (/Users/soegaard/Library/Application Support/Sublime Text 3/Packages/User/racket.tmLanguage)
-##[Finished in 0.011s]
+
 
 # name of the programming language
 name: Racket (soegaard)
@@ -13,14 +17,33 @@ fileTypes: [rkt]
 # An unique identifier for this syntax definition.
 uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 
+### This file contains regular expressions that categorize pieces of a Racket source file.
+### Each line is matched individually.
+### The categories are called "scopes" in TextMate parlance.
+### Some of the categories/scopes that Github recognizes are:
 
+##  "comment":          "pl-c",   light gray #969896;
+##  "constant":         "pl-c1"   bluish     #0086b3
+##  "entity.name"       "pl-en"              #795da3
+##  "keyword"           "pl-k"    purpleish  #a71d5d
+##  "string"            "pl-s1"   orangy     #df5000     
+##  "string.regexp"     "pl-sr"   
+##  "support.variable"  "pl-sv"
+##  "variable"          "pl-v"
 
+## See the complete list at:  https://github.com/github/linguist/issues/1822 
 
 patterns:
+
+###
+### Each pattern has three components:
+###
+
 # comment - optional comment about patterns
 # name    - the name of the scope
 # match   - a regular expression (in Onigurama syntax - sigh)
 
+## Note that the indentation below has exactly 2 spaces.
 
 ###
 ### DELIMITERS
@@ -32,70 +55,70 @@ patterns:
 #      (?=[()\[\]{}",'`;\ \s])
 
 ###
-### DATUMS
+### DATUMS  (constant)
 ###
 
 
 - comment: string datums  are enclosed in ". Inside a string \" is used to escape an ".
-  name: string.quoted.double
+  name: constant
   match: \"([^"])*\"
 
 
 - comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
-  name: string.quoted.double
+  name: constant
   match: ((\#[tT])|(\#[fF])|(\#true)|(\#false))(?=[()\[\]{}",'`;\ \s])
 
 - comment: character datum
-  name: string.quoted.double
+  name: constant
   match: \#\\[A-Za-z]([A-Za-z])*
 
 
 - comment: real - an optional sign followed by a number with a period
-  name:    string.quoted.double
+  name:    constant
   match:   (([+\-]?)(([0-9])++)\.([0-9])*)(?=[()\[\]{}",'`;\ \s])
 
 - comment: rationals - with an optional sign
-  name:    string.quoted.double
+  name:    constant
   match:   ((([+\-]?)([0-9])++)/([0-9])++)(?=[()\[\]{}",'`;\ \s])
 
 - comment: integers - with an optional sign
-  name:    string.quoted.double
+  name:    constant
   match:   (([+\-]?)([0-9])++)(?=[()\[\]{}",'`;\ \s])
 
 - comment: void
-  name: string.quoted.double
+  name: constant
   match: \#void(?=[()\[\]{}",'`;\ \s])
 
 - comment: symbol
-  name: string.quoted.double
+  name: constant
   match: \'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
  # todo: quoted s-expressions ?
 
 - comment: quoted empty list
-  name: string.quoted.double
+  name: constant
   match: \'\(\)
 
 - comment: keyword
-  name: string.quoted.double
+  name: constant
   match: \#\:([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
 - comment: syntax-quoted identifiers   #'name
-  name: string.quoted.double
+  name: constant
   match: \#\'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
 ###
-### IDENTIFIERS
+### IDENTIFIERS 
 ###
 
+### identifiers bound as syntax (akak keywords) get the scope "keyword"
+### other identifiers are get the scope "variable"
+
 - comment: syntax in the racket language
-  name:    string.quoted.double
+  name:    keyword
   match:  (\#\%app|\#\%datum|\#\%declare|\#\%expression|\#\%module\-begin|\#\%plain\-app|\#\%plain\-lambda|\#\%plain\-module\-begin|\#\%printing\-module\-begin|\#\%provide|\#\%require|\#\%stratified\-body|\#\%top|\#\%top\-interaction|\#\%variable\-reference|\->|\->\*|\->\*m|\->d|\->dm|\->i|\->m|\.\.\.|\:do\-in|==|=>|_|absent|abstract|all\-defined\-out|all\-from\-out|and|any|augment|augment\*|augment\-final|augment\-final\*|augride|augride\*|begin|begin\-for\-syntax|begin0|case|case\->|case\->m|case\-lambda|class|class\*|class\-field\-accessor|class\-field\-mutator|class/c|class/derived|combine\-in|combine\-out|command\-line|compound\-unit|compound\-unit/infer|cond|contract|contract\-out|contract\-struct|contracted|define|define\-compound\-unit|define\-compound\-unit/infer|define\-contract\-struct|define\-custom\-hash\-types|define\-custom\-set\-types|define\-for\-syntax|define\-local\-member\-name|define\-logger|define\-match\-expander|define\-member\-name|define\-module\-boundary\-contract|define\-namespace\-anchor|define\-opt/c|define\-sequence\-syntax|define\-serializable\-class|define\-serializable\-class\*|define\-signature|define\-signature\-form|define\-struct|define\-struct/contract|define\-struct/derived|define\-syntax|define\-syntax\-rule|define\-syntaxes|define\-unit|define\-unit\-binding|define\-unit\-from\-context|define\-unit/contract|define\-unit/new\-import\-export|define\-unit/s|define\-values|define\-values\-for\-export|define\-values\-for\-syntax|define\-values/invoke\-unit|define\-values/invoke\-unit/infer|define/augment|define/augment\-final|define/augride|define/contract|define/final\-prop|define/match|define/overment|define/override|define/override\-final|define/private|define/public|define/public\-final|define/pubment|define/subexpression\-pos\-prop|delay|delay/idle|delay/name|delay/strict|delay/sync|delay/thread|do|else|except|except\-in|except\-out|export|extends|failure\-cont|false|false/c|field|field\-bound\?|file|flat\-murec\-contract|flat\-rec\-contract|for|for\*|for\*/and|for\*/first|for\*/fold|for\*/fold/derived|for\*/hash|for\*/hasheq|for\*/hasheqv|for\*/last|for\*/list|for\*/lists|for\*/mutable\-set|for\*/mutable\-seteq|for\*/mutable\-seteqv|for\*/or|for\*/product|for\*/set|for\*/seteq|for\*/seteqv|for\*/sum|for\*/vector|for\*/weak\-set|for\*/weak\-seteq|for\*/weak\-seteqv|for\-label|for\-meta|for\-syntax|for\-template|for/and|for/first|for/fold|for/fold/derived|for/hash|for/hasheq|for/hasheqv|for/last|for/list|for/lists|for/mutable\-set|for/mutable\-seteq|for/mutable\-seteqv|for/or|for/product|for/set|for/seteq|for/seteqv|for/sum|for/vector|for/weak\-set|for/weak\-seteq|for/weak\-seteqv|gen\:custom\-write|gen\:dict|gen\:equal\+hash|gen\:set|gen\:stream|generic|get\-field|if|implies|import|include|include\-at/relative\-to|include\-at/relative\-to/reader|include/reader|inherit|inherit\-field|inherit/inner|inherit/super|init|init\-depend|init\-field|init\-rest|inner|inspect|instantiate|interface|interface\*|invariant\-assertion|invoke\-unit|invoke\-unit/infer|lambda|lazy|let|let\*|let\*\-values|let\-syntax|let\-syntaxes|let\-values|let/cc|let/ec|letrec|letrec\-syntax|letrec\-syntaxes|letrec\-syntaxes\+values|letrec\-values|lib|link|local|local\-require|log\-debug|log\-error|log\-fatal|log\-info|log\-warning|match|match\*|match\*/derived|match\-define|match\-define\-values|match\-lambda|match\-lambda\*|match\-lambda\*\*|match\-let|match\-let\*|match\-let\*\-values|match\-let\-values|match\-letrec|match/derived|match/values|member\-name\-key|method\-contract\?|mixin|module|module\*|module\+|nand|new|nor|object\-contract|object/c|only|only\-in|only\-meta\-in|open|opt/c|or|overment|overment\*|override|override\*|override\-final|override\-final\*|parameterize|parameterize\*|parameterize\-break|parametric\->/c|place|place\*|planet|prefix|prefix\-in|prefix\-out|private|private\*|prompt\-tag/c|protect\-out|provide|provide\-signature\-elements|provide/contract|public|public\*|public\-final|public\-final\*|pubment|pubment\*|quasiquote|quasisyntax|quasisyntax/loc|quote|quote\-syntax|quote\-syntax/prune|recontract\-out|recursive\-contract|relative\-in|rename|rename\-in|rename\-inner|rename\-out|rename\-super|require|send|send\*|send\+|send\-generic|send/apply|send/keyword\-apply|set!|set!\-values|set\-field!|shared|stream|stream\-cons|struct|struct\*|struct\-copy|struct\-field\-index|struct\-out|struct/c|struct/ctc|struct/dc|submod|super|super\-instantiate|super\-make\-object|super\-new|syntax|syntax\-case|syntax\-case\*|syntax\-id\-rules|syntax\-rules|syntax/loc|tag|this|this\%|thunk|thunk\*|time|unconstrained\-domain\->|unit|unit\-from\-context|unit/c|unit/new\-import\-export|unit/s|unless|unquote|unquote\-splicing|unsyntax|unsyntax\-splicing|values/drop|when|with\-continuation\-mark|with\-contract|with\-handlers|with\-handlers\*|with\-method|with\-syntax|λ)(?=[()\[\]{}",'`;\ \s])
   captures: 
     '1': {name: string.quoted.double}
-
-
-
 
 
 # Identifiers start with a non-delimiter different from #
@@ -110,12 +133,12 @@ patterns:
 ###
 
 - comment: #; comments - color the #;  (todo: color the following s-exp)
-  name: comment.sexp
+  name: comment
   match: \#\;
 
 # line comment
 - comment: ; comments begins with ; and extends to the end of the line
-  name: comment.line.semicolon
+  name: comment
   match: ;.*$
 
 # use two spaces for indentation - yaml syntax is indentation 

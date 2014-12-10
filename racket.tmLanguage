@@ -99,14 +99,6 @@
 			<string>constant</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>string.quoted.double</string>
-				</dict>
-			</dict>
 			<key>comment</key>
 			<string>syntax in the racket language</string>
 			<key>match</key>

@@ -112,7 +112,7 @@
 			<key>match</key>
 			<string>([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)</string>
 			<key>name</key>
-			<string>variable</string>
+			<string>none</string>
 		</dict>
 		<dict>
 			<key>comment</key>

@@ -122,7 +122,7 @@ patterns:
 # Identifiers start with a non-delimiter different from #
 # The identifier continues until a delimiter is seen.
 - comment: identifiers
-  name: variable
+  name: none
   match: ([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
 

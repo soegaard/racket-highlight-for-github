@@ -92,6 +92,9 @@ patterns:
   name:    constant
   match:   \#e(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
+- comment: other numbers
+  name:    constant
+  match:   ([\-+]nan\.[0t])|([\-+]inf\.[0t])
 
 #- comment: real - an optional sign followed by a number with a period
 #  name:    string

@@ -76,6 +76,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>other numbers</string>
+			<key>match</key>
+			<string>([\-+]nan\.[0t])|([\-+]inf\.[0t])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>void</string>
 			<key>match</key>
 			<string>\#void(?=[()\[\]{}",'`;\ \s])</string>

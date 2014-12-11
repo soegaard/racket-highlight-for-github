@@ -68,14 +68,6 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>exact numbers</string>
-			<key>match</key>
-			<string>\#e(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
-			<key>name</key>
-			<string>constant</string>
-		</dict>
-		<dict>
-			<key>comment</key>
 			<string>void</string>
 			<key>match</key>
 			<string>\#void(?=[()\[\]{}",'`;\ \s])</string>

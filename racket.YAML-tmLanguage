@@ -88,9 +88,6 @@ patterns:
   name:    constant
   match:   \#d(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: exact numbers
-  name:    constant
-  match:   \#e(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
 
 - comment: void

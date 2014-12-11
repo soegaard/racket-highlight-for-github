@@ -72,9 +72,13 @@ patterns:
   name: constant
   match: \#\\[A-Za-z]([A-Za-z])*
 
-- comment: number - an optional sign followed by a number with a period
+- comment: number   # is unknown digit, t appears in extended floats
   name:    constant
-  match:   (([+\-]?)(([0-9\#\.t])++))(?=[()\[\]{}",'`;\ \s])
+  match:   (([+\-]?)(([0-9\#\.t/])++))(?=[()\[\]{}",'`;\ \s])
+
+- comment: fractions
+  name:    constant
+  match:   (([+\-]?)(([0-9\#\.t/])++)/(([0-9\#\.t/])++))(?=[()\[\]{}",'`;\ \s])
 
 
 - comment: real - an optional sign followed by a number with a period

@@ -36,9 +36,17 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>number - an optional sign followed by a number with a period</string>
+			<string>number</string>
 			<key>match</key>
-			<string>(([+\-]?)(([0-9\#\.t])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<string>(([+\-]?)(([0-9\#\.t/])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>fractions</string>
+			<key>match</key>
+			<string>(([+\-]?)(([0-9\#\.t/])++)/(([0-9\#\.t/])++))(?=[()\[\]{}",'`;\ \s])</string>
 			<key>name</key>
 			<string>constant</string>
 		</dict>

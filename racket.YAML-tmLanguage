@@ -68,11 +68,11 @@ patterns:
 
 
 - comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
-  name: constant
-  match: ((\#[tT])|(\#[fF])|(\#true)|(\#false))(?=[()\[\]{}",'`;\ \s])
+  name:    constant
+  match:   ((\#[tT])|(\#[fF])|(\#true)|(\#false))(?=[()\[\]{}",'`;\ \s])
 
 - comment: character datum
-  name:    constant
+  name:    string
   match:   (((?i:(((\#\\nul)|(\#\\null)|(\#\\backspace)|(\#\\tab)|(\#\\newline)|(\#\\linefeed)|(\#\\vtab)|(\#\\page)|(\#\\return)|(\#\\space)|(\#\\rubout)))))|(\#\\(([0-7]){1,3}))|(\#\\u(([0-9abcdefABCDEF]){1,4}))|(\#\\U(([0-9abcdefABCDEF]){1,8}))|(\#\\.(?!([:alnum:]))))
 
 - comment: general binary number

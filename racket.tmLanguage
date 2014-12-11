@@ -38,7 +38,39 @@
 			<key>comment</key>
 			<string>number</string>
 			<key>match</key>
-			<string>(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<string>(([+\-]?)([0-9\.]([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>fractions</string>
+			<key>match</key>
+			<string>(([+\-]?)(([0-9\#\.i\-+teE/])++)/(([0-9\#\.i-+eEt/])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>binary numbers</string>
+			<key>match</key>
+			<string>\#b(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>decimal numbers</string>
+			<key>match</key>
+			<string>\#d(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>exact numbers</string>
+			<key>match</key>
+			<string>\#e(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
 			<key>name</key>
 			<string>constant</string>
 		</dict>

@@ -64,7 +64,7 @@ patterns:
 
 # Note: the following does not handle multi line strings.
 - comment: strings, byte strings, regular expressions
-  name:    markup.inserted
+  name:    markup
   match:   (\#px|\#rx)?(\#)?\"([^"]|(\\")|(\\\\))*(?<!\\)"
 # Note (?<! re) is negative lookahead. The character before the last can not be a backslash.
 

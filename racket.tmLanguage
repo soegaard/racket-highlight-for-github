@@ -22,6 +22,14 @@
 			<key>comment</key>
 			<string>booleans</string>
 			<key>match</key>
+			<string>\#(?i)FAlse(?-i)</string>
+			<key>name</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>booleans</string>
+			<key>match</key>
 			<string>((\#[tT])|(\#[fF])|(\#true)|(\#false))(?=[()\[\]{}",'`;\ \s])</string>
 			<key>name</key>
 			<string>constant</string>

@@ -74,7 +74,7 @@ patterns:
 
 - comment: number - an optional sign followed by a number with a period
   name:    constant
-  match:   (([+\-]?)([0-9]([0-9\#\.])++))(?=[()\[\]{}",'`;\ \s])
+  match:   (([+\-]?)([0-9]([0-9\#\.t])++))(?=[()\[\]{}",'`;\ \s])
 
 
 - comment: real - an optional sign followed by a number with a period

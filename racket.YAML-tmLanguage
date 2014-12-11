@@ -99,7 +99,7 @@ patterns:
 
 - comment: other numbers
   name:    constant
-  match:   ([\-+]nan\.[0t])|([\-+]inf\.[0t])
+  match:   ([\-+]nan\.[0t]i?)|([\-+]inf\.[0t]i?)
 
 #- comment: real - an optional sign followed by a number with a period
 #  name:    string

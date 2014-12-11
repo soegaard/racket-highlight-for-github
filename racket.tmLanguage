@@ -86,7 +86,7 @@
 			<key>comment</key>
 			<string>other numbers</string>
 			<key>match</key>
-			<string>([\-+]nan\.[0t])|([\-+]inf\.[0t])</string>
+			<string>([\-+]nan\.[0t]i?)|([\-+]inf\.[0t]i?)</string>
 			<key>name</key>
 			<string>constant</string>
 		</dict>

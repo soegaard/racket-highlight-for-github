@@ -88,18 +88,10 @@ patterns:
   name:    constant
   match:   \#d(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
+- comment: exact numbers
+  name:    constant
+  match:   \#e(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: real - an optional sign followed by a number with a period
-  name:    string
-  match:   (([+\-]?)(([0-9])++)\.([0-9])*)(?=[()\[\]{}",'`;\ \s])
-
-- comment: rationals - with an optional sign
-  name:    string
-  match:   ((([+\-]?)([0-9])++)/([0-9])++)(?=[()\[\]{}",'`;\ \s])
-
-- comment: integers - with an optional sign
-  name:    string
-  match:   (([+\-]?)([0-9])++)(?=[()\[\]{}",'`;\ \s])
 
 - comment: void
   name: constant

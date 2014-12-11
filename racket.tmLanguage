@@ -68,27 +68,11 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>real - an optional sign followed by a number with a period</string>
+			<string>exact numbers</string>
 			<key>match</key>
-			<string>(([+\-]?)(([0-9])++)\.([0-9])*)(?=[()\[\]{}",'`;\ \s])</string>
+			<string>\#e(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>
 			<key>name</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>rationals - with an optional sign</string>
-			<key>match</key>
-			<string>((([+\-]?)([0-9])++)/([0-9])++)(?=[()\[\]{}",'`;\ \s])</string>
-			<key>name</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>integers - with an optional sign</string>
-			<key>match</key>
-			<string>(([+\-]?)([0-9])++)(?=[()\[\]{}",'`;\ \s])</string>
-			<key>name</key>
-			<string>string</string>
+			<string>constant</string>
 		</dict>
 		<dict>
 			<key>comment</key>

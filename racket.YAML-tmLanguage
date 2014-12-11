@@ -62,9 +62,12 @@ patterns:
 ###
 
 
-- comment: string datums  are enclosed in ". Inside a string \" is used to escape an ".
-  name:    string
-  match: \"([^"]|(\\"))*\"
+# Note: the following does not handle multi line strings.
+- comment: strings, byte strings, regular expressions
+  name:    constant
+  match:   (\#px|\#rx)?(\#)?\"([^"]|(\\")|(\\\\))*(?<!\\)"
+# Note (?<! re) is negative lookahead. The character before the last can not be a backslash.
+
 
 - comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
   name:    constant

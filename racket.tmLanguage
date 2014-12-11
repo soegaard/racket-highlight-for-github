@@ -12,11 +12,11 @@
 	<array>
 		<dict>
 			<key>comment</key>
-			<string>string datums  are enclosed in ". Inside a string \" is used to escape an ".</string>
+			<string>strings, byte strings, regular expressions</string>
 			<key>match</key>
-			<string>\"([^"]|(\\"))*\"</string>
+			<string>(\#px|\#rx)?(\#)?\"([^"]|(\\")|(\\\\))*(?&lt;!\\)"</string>
 			<key>name</key>
-			<string>string</string>
+			<string>constant</string>
 		</dict>
 		<dict>
 			<key>comment</key>

@@ -73,7 +73,7 @@ patterns:
 
 - comment: character datum
   name:    string
-  match:   ((((\#\\nul)|(\#\\null)|(\#\\backspace)|(\#\\tab)|(\#\\newline)|(\#\\linefeed)|(\#\\vtab)|(\#\\page)|(\#\\return)|(\#\\space)|(\#\\rubout)))|(\#\\(([0-7]){1,3}))|(\#\\u(([0-9abcdefABCDEF]){1,4}))|(\#\\U(([0-9abcdefABCDEF]){1,8}))|(\#\\\.\\W))
+  match:   (((?i:(((\#\\nul)|(\#\\null)|(\#\\backspace)|(\#\\tab)|(\#\\newline)|(\#\\linefeed)|(\#\\vtab)|(\#\\page)|(\#\\return)|(\#\\space)|(\#\\rubout)))))|(\#\\(([0-7]){1,3}))|(\#\\u(([0-9abcdefABCDEF]){1,4}))|(\#\\U(([0-9abcdefABCDEF]){1,8}))|(\#\\.(?!([:alnum:]))))
 #  match:   \#\\[A-Za-z]([A-Za-z])*
 
 - comment: general binary number

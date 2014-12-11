@@ -82,7 +82,7 @@ patterns:
 
 - comment: binary numbers
   name:    constant
-  match:   \#b(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+  match:   \#b(([+\-]?)(([0-9\#\.i\-+teE/])++)/(([0-9\#\.i\-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
 
 - comment: decimal numbers
   name:    constant

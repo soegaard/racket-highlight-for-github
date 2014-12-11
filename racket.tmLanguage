@@ -48,7 +48,7 @@
 			<key>match</key>
 			<string>(([+\-]?)(([0-9\#\.i-+teE/])++)/(([0-9\#\.i-+eEt/])++))(?=[()\[\]{}",'`;\ \s])</string>
 			<key>name</key>
-			<string>string</string>
+			<string>constant</string>
 		</dict>
 		<dict>
 			<key>comment</key>

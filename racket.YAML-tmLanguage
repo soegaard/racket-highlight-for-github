@@ -69,8 +69,8 @@ patterns:
   match: ((\#[tT])|(\#[fF])|(\#true)|(\#false))(?=[()\[\]{}",'`;\ \s])
 
 - comment: character datum
-  name: constant
-  match: \#\\[A-Za-z]([A-Za-z])*
+  name:    constant
+  match:   \#\\[A-Za-z]([A-Za-z])*
 
 - comment: number   # is unknown digit, t appears in extended floats
   name:    constant
@@ -78,7 +78,7 @@ patterns:
 
 - comment: fractions
   name:    constant
-  match:   (([+\-]?)(([0-9\#\.i\-+teE/])++)/(([0-9\#\.i-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
+  match:   (([+\-]?)(([0-9\#\.i\-+teE/])++)/(([0-9\#\.i\-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
 
 - comment: binary numbers
   name:    constant

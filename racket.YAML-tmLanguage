@@ -74,7 +74,7 @@ patterns:
 
 - comment: number   # is unknown digit, t appears in extended floats
   name:    constant
-  match:   (([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+  match:   (([+\-]?)(([0-9\#\.i-+teE\/])++))(?=[()\[\]{}",'`;\ \s])
 
 #- comment: fractions
 #  name:    constant

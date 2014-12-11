@@ -30,7 +30,7 @@
 			<key>comment</key>
 			<string>character datum</string>
 			<key>match</key>
-			<string>((((?i)((\#\\null)|(\#\\nul)|(\#\\backspace)|(\#\\tab)|(\#\\newline)|(\#\\linefeed)|(\#\\vtab)|(\#\\page)|(\#\\return)|(\#\\space)|(\#\\rubout))(?-i)))|(\#\\(([0-7]){1,3}))|(\#\\u(([0-9abcdefABCDEF]){1,4}))|(\#\\U(([0-9abcdefABCDEF]){1,8}))|(\#\\.(?![[:alpha:]])))</string>
+			<string>((((?i)((\#\\null)|(\#\\nul)|(\#\\backspace)|(\#\\tab)|(\#\\newline)|(\#\\linefeed)|(\#\\vtab)|(\#\\page)|(\#\\return)|(\#\\space)|(\#\\rubout))(?-i)))|(\#\\(([0-7]){1,3}))|(\#\\u(([0-9abcdefABCDEF]){1,4}))|(\#\\U(([0-9abcdefABCDEF]){1,8}))|(\#\\.(?=[^[:alpha:]])))</string>
 			<key>name</key>
 			<string>string</string>
 		</dict>

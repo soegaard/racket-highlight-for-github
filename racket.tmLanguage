@@ -60,6 +60,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>binary numbers</string>
+			<key>match</key>
+			<string>\#b([+\-]i)(?=[()\[\]{}",'`;\ \s])</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>decimal numbers</string>
 			<key>match</key>
 			<string>\#d(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])</string>

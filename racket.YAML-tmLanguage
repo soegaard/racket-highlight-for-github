@@ -76,34 +76,34 @@ patterns:
   name:    constant
   match:   (([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: fractions
-  name:    constant
-  match:   (([+\-]?)(([0-9\#\.i-+teE/])++)/(([0-9\#\.i-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
+#- comment: fractions
+#  name:    constant
+#  match:   (([+\-]?)(([0-9\#\.i-+teE/])++)/(([0-9\#\.i-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: binary numbers
-  name:    constant
-  match:   \#b(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+#- comment: binary numbers
+#  name:    constant
+#  match:   \#b(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: decimal numbers
-  name:    constant
-  match:   \#d(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+#- comment: decimal numbers
+#  name:    constant
+#  match:   \#d(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: exact numbers
-  name:    constant
-  match:   \#e(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+#- comment: exact numbers
+#  name:    constant
+#  match:   \#e(([+\-]?)(([0-9\#\.i-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
 
-- comment: real - an optional sign followed by a number with a period
-  name:    string
-  match:   (([+\-]?)(([0-9])++)\.([0-9])*)(?=[()\[\]{}",'`;\ \s])
+#- comment: real - an optional sign followed by a number with a period
+#  name:    string
+#  match:   (([+\-]?)(([0-9])++)\.([0-9])*)(?=[()\[\]{}",'`;\ \s])
 
-- comment: rationals - with an optional sign
-  name:    string
-  match:   ((([+\-]?)([0-9])++)/([0-9])++)(?=[()\[\]{}",'`;\ \s])
+#- comment: rationals - with an optional sign
+#  name:    string
+#  match:   ((([+\-]?)([0-9])++)/([0-9])++)(?=[()\[\]{}",'`;\ \s])
 
-- comment: integers - with an optional sign
-  name:    string
-  match:   (([+\-]?)([0-9])++)(?=[()\[\]{}",'`;\ \s])
+#- comment: integers - with an optional sign
+# name:    string
+# match:   (([+\-]?)([0-9])++)(?=[()\[\]{}",'`;\ \s])
 
 
 - comment: void

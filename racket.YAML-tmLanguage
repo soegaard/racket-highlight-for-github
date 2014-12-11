@@ -67,10 +67,6 @@ patterns:
   match: \"([^"])*\"
 
 - comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
-  name:    string
-  match:   \#(?i)FAlse(?-i)
-
-- comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
   name:    constant
   match:   ((\#[tT])|(\#[fF])|(\#true)|(\#false))(?=[()\[\]{}",'`;\ \s])
 

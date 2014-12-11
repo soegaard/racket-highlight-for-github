@@ -63,8 +63,8 @@ patterns:
 
 
 - comment: string datums  are enclosed in ". Inside a string \" is used to escape an ".
-  name: constant
-  match: \"([^"])*\"
+  name:    string
+  match: \"([^"]|(\\"))*\"
 
 - comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
   name:    constant

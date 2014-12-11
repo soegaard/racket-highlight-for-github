@@ -14,9 +14,9 @@
 			<key>comment</key>
 			<string>string datums  are enclosed in ". Inside a string \" is used to escape an ".</string>
 			<key>match</key>
-			<string>\"([^"])*\"</string>
+			<string>\"([^"]|(\\"))*\"</string>
 			<key>name</key>
-			<string>constant</string>
+			<string>string</string>
 		</dict>
 		<dict>
 			<key>comment</key>

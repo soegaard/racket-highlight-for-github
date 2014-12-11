@@ -36,7 +36,10 @@ uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 
 ## The repository gives names to regular expressions, that can be used later on.
 repository:
-  digit: [0-9]
+  digit: 
+    match: [0-9]
+
+  number: 
 
 
 patterns:
@@ -78,9 +81,10 @@ patterns:
   name:    constant
   match:   \#\\[A-Za-z]([A-Za-z])*
 
-- comment: number   # is unknown digit, t appears in extended floats
+- comment: general decimal number
   name:    constant
-  match:   (#digit)++
+  match:   #[ei]?((\\+|-)?([0-9]+|[0-9]+/[0-9]+)|(\\+|-)?([0-9]+|[0-9]+/[0-9]+)(\\+|-)([0-9]+|[0-9]+/[0-9]+)i)|(\\+|-)?([0-9]+#*.?#+|[0-9]+?.[0-9]+#*|[0-9]+#*/[0-9]+#*)([sldef](\\+|-)?[0-9]+)?|(\\+|-)(inf.0|nan.0|inf.f|nan.f)|(\\+|-)?([0-9]+#*.?#+|[0-9]+?.[0-9]+#*|[0-9]+#*/[0-9]+#*)([sldef](\\+|-)?[0-9]+)?|(\\+|-)(inf.0|nan.0|inf.f|nan.f)?(\\+|-)([0-9]+#*.?#+|[0-9]+?.[0-9]+#*|[0-9]+#*/[0-9]+#*)([sldef](\\+|-)?[0-9]+)?|(inf.0|nan.0|inf.f|nan.f)i|(\\+|-)?([0-9]+#*.?#+|[0-9]+?.[0-9]+#*|[0-9]+#*/[0-9]+#*)([sldef](\\+|-)?[0-9]+)?|(\\+|-)(inf.0|nan.0|inf.f|nan.f)@(\\+|-)?([0-9]+#*.?#+|[0-9]+?.[0-9]+#*|[0-9]+#*/[0-9]+#*)([sldef](\\+|-)?[0-9]+)?|(\\+|-)(inf.0|nan.0|inf.f|nan.f)
+
 
 #  match:   (([+\-]?)([0-9\.]([0-9\#\.i\-+teE/])*))(?=[()\[\]{}",'`;\ \s])
 

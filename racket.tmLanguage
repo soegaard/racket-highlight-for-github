@@ -16,7 +16,7 @@
 			<key>match</key>
 			<string>(\#px|\#rx)?(\#)?\"([^"]|(\\")|(\\\\))*(?&lt;!\\)"</string>
 			<key>name</key>
-			<string>constant</string>
+			<string>markup.inserted</string>
 		</dict>
 		<dict>
 			<key>comment</key>

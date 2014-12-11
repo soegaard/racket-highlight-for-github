@@ -28,6 +28,9 @@
     [(list 'ahead re)      (~a "(?=" (wrap (e re)) ")")]
     [(list 'not-ahead re)  (~a "(?!" (wrap (e re)) ")")]
     [(list 'sub re)        (~a (wrap (e re)))]
+    [(list 'between from to re) (wrap (~a (wrap (e re)) "{" from "," to "}"))]
+    [(list 'bracket name)  (~a "[:" name ":]")]
+    [(list 'ignore-case re) (~a "((?i)(" (e re) "(?-i)))")]
     [(? number? n)         (~a n)]
     [(? char? c)           (~a (ch c))]
     [(? string? s)         (~a s)]    
@@ -48,6 +51,10 @@
 (define-builder one-or-more  (re) '+)
 (define-builder zero-or-more (re) '*)
 (define-builder sub          (re) 'sub)
+(define-builder between      (from to re) 'between)
+(define-builder not-ahead    (re) 'not-ahead)
+(define-builder bracket      (name) 'bracket)
+(define-builder ignore-case  (re) 'ignore-case)
 
 ; ch : char -> string
 ;  escapes characters
@@ -74,7 +81,7 @@
 (define <digit2>  "[0-1]")
 (define <digit8>  "[0-7]")
 (define <digit10> "[0-9]")
-(define <digit16> "[0-9abcdef]")
+(define <digit16> "[0-9abcdefABCDEF]")
 (define (digit n) 
   (case n
     [(2)  <digit2>]
@@ -179,4 +186,27 @@
 (displayln (emit-re (hexadecimal-numbers)))
 'extflonum
 (displayln (emit-re (extflonum)))
+
+
+(define <characters>
+  (let ()
+    (define names '("nul" "null" "backspace" "tab" "newline" "linefeed"
+                          "vtab" "page" "return" "space" "rubout"))
+    
+    (union 
+     ; named characters
+     (ignore-case (apply union (for/list ([n names]) (~a (str "#\\") n))))
+     ; unicode octal
+     (seq #\# #\\    (between 1 3 (digit 8)))
+     ; unicode hexadecimal
+     (seq #\# #\\ #\u (between 1 4 (digit 16)))
+     (seq #\# #\\ #\U (between 1 8 (digit 16)))
+     (seq #\# #\\ "." (not-ahead (bracket "alnum"))))))
+
+'characters
+(displayln (emit-re <characters>))
+     
+
+
+
 

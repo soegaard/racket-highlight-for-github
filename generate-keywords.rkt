@@ -62,7 +62,7 @@
   (define s8 (regexp-replace* #rx"\\+"   s7 "\\\\+"))
   s8)
 
-(displayln (escape (apply string-append (add-between KEYWORDS "|"))))
+; (displayln (escape (apply string-append (add-between KEYWORDS "|"))))
 (displayln (escape (apply string-append (add-between BUILTINS "|"))))
 
 

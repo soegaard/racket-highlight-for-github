@@ -33,6 +33,12 @@ uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 
 ## See the complete list at:  https://github.com/github/linguist/issues/1822 
 
+
+## The repository gives names to regular expressions, that can be used later on.
+repository:
+  digit: [0-9]
+
+
 patterns:
 
 ###
@@ -74,32 +80,34 @@ patterns:
 
 - comment: number   # is unknown digit, t appears in extended floats
   name:    constant
-  match:   (([+\-]?)([0-9\.]([0-9\#\.i\-+teE/])*))(?=[()\[\]{}",'`;\ \s])
+  match:   (#digit)++
 
-- comment: fractions
-  name:    constant
-  match:   (([+\-]?)(([0-9\#\.i\-+teE/])*)/(([0-9\#\.i\-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
+#  match:   (([+\-]?)([0-9\.]([0-9\#\.i\-+teE/])*))(?=[()\[\]{}",'`;\ \s])
 
-- comment: binary numbers
-  name:    constant
-  match:   \#b(([+\-]?)([0-9\.]([0-9\#\.i\-+teE/])*))(?=[()\[\]{}",'`;\ \s])
+#- comment: fractions
+#  name:    constant
+#  match:   (([+\-]?)(([0-9\#\.i\-+teE/])*)/(([0-9\#\.i\-+eEt/])++))(?=[()\[\]{}",'`;\ \s])
+
+#- comment: binary numbers
+#  name:    constant
+#  match:   \#b(([+\-]?)([0-9\.]([0-9\#\.i\-+teE/])*))(?=[()\[\]{}",'`;\ \s])
 
 
-- comment: binary numbers
-  name:    constant
-  match:   \#b([+\-]i)(?=[()\[\]{}",'`;\ \s])
+#- comment: binary numbers
+#  name:    constant
+#  match:   \#b([+\-]i)(?=[()\[\]{}",'`;\ \s])
 
-- comment: decimal numbers
-  name:    constant
-  match:   \#d(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+#- comment: decimal numbers
+#  name:    constant
+#  match:   \#d(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: exact numbers
-  name:    constant
-  match:   \#e(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])
+#- comment: exact numbers
+#  name:    constant
+#  match:   \#e(([+\-]?)(([0-9\#\.i\-+teE/])++))(?=[()\[\]{}",'`;\ \s])
 
-- comment: other numbers
-  name:    constant
-  match:   ([\-+]nan\.[0t]i?)|([\-+]inf\.[0t]i?)
+#- comment: other numbers
+#  name:    constant
+#  match:   ([\-+]nan\.[0t]i?)|([\-+]inf\.[0t]i?)
 
 #- comment: real - an optional sign followed by a number with a period
 #  name:    string

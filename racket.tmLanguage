@@ -11,6 +11,10 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>include</key>
+			<string>#quotation</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>strings, byte strings, regular expressions</string>
 			<key>match</key>
@@ -79,22 +83,6 @@
 			<string>void</string>
 			<key>match</key>
 			<string>\#void(?=[()\[\]{}",'`;\ \s])</string>
-			<key>name</key>
-			<string>constant</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>symbol</string>
-			<key>match</key>
-			<string>\'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)</string>
-			<key>name</key>
-			<string>constant</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>quoted empty list</string>
-			<key>match</key>
-			<string>\'\(\)</string>
 			<key>name</key>
 			<string>constant</string>
 		</dict>
@@ -218,7 +206,30 @@
 			<key>name</key>
 			<string>comment</string>
 		</dict>
+		<dict>
+			<key>include</key>
+			<string>#quotation</string>
+		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>quotation</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\'</string>
+					<key>end</key>
+					<string>\'</string>
+					<key>match</key>
+					<string>([a-aA-Z0-9])+</string>
+					<key>name</key>
+					<string>constant</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.racket</string>
 	<key>uuid</key>

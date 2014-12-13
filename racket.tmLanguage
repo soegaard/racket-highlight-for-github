@@ -19,10 +19,14 @@
 			<string>#sexpcomment</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#number</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>strings, byte strings, regular expressions</string>
 			<key>match</key>
-			<string>(\#px|\#rx)?(\#)?\"([^"]|(\\")|(\\\\))*(?&lt;!\\)"</string>
+			<string>(\#px|\#rx)?(\#)?\"([^"\\]|(\\")|(\\\\))*"</string>
 			<key>name</key>
 			<string>constant</string>
 		</dict>

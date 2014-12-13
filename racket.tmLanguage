@@ -132,14 +132,6 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<false/>
-			<key>match</key>
-			<string>\#\;</string>
-			<key>name</key>
-			<string>comment</string>
-		</dict>
-		<dict>
-			<key>comment</key>
 			<string>; comments begins with ; and extends to the end of the line</string>
 			<key>match</key>
 			<string>;.*$</string>

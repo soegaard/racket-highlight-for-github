@@ -197,9 +197,9 @@ patterns:
 ### COMMENTS
 ###
 
-- comment: #; comments - color the #;  (todo: color the following s-exp)
-  name: comment
-  match: \#\;
+#- comment: #; comments - color the #;  (todo: color the following s-exp)
+#  name: comment
+#  match: \#\;
 
 # line comment
 - comment: ; comments begins with ; and extends to the end of the line

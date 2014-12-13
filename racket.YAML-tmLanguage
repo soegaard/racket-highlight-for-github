@@ -96,7 +96,7 @@ patterns:
   end:     \"
   patterns:
   - name: constant
-    match:  ([^"\\]|\\\"|\\\\)*
+    match:  ([^"\\]|\\\"|\\\\)*(?<!\\)
  
 # Note (?<! re) is negative lookahead. The character before the last can not be a backslash.
 

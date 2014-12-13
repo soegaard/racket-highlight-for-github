@@ -65,6 +65,8 @@ repository:
     name:          comment
     contentName:   comment
     patterns:
+    - include:     "#multilinecomment"
+      name:        comment
     - match:       ([^\|]|\|(?=[^#]))*
       name:        comment
 

@@ -183,6 +183,12 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>#multilinecomment</string>
+					<key>name</key>
+					<string>comment</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>([^\|]|\|(?=[^#]))*</string>
 					<key>name</key>

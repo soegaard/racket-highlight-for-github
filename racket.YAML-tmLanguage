@@ -54,7 +54,7 @@ repository:
       name:        comment      
   paren-sexp-comment:
     begin:         (?<=\()
-    end:           \)
+    end:           (?=\))
     name:          comment
     patterns:
     - include:     self

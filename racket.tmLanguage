@@ -207,7 +207,7 @@
 		<key>sexpcomment</key>
 		<dict>
 			<key>begin</key>
-			<string>\#\;\()</string>
+			<string>\#\;\(</string>
 			<key>contentName</key>
 			<string>comment</string>
 			<key>end</key>

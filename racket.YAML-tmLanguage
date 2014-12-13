@@ -45,7 +45,7 @@ repository:
       name:        constant
 
   sexpcomment: 
-    begin:         \#\;\()
+    begin:         \#\;\(
     end:           \)
     name:          comment
     contentName:   comment

@@ -211,7 +211,7 @@
 			<key>contentName</key>
 			<string>comment</string>
 			<key>end</key>
-			<string>(?=endof)file</string>
+			<string>(?&lt;=\))</string>
 			<key>name</key>
 			<string>comment</string>
 			<key>patterns</key>

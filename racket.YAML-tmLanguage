@@ -46,7 +46,7 @@ repository:
 
   sexpcomment: 
     begin:         \#\;
-    end:           (?=endof)file
+    end:           (?<=\))
     name:          comment
     contentName:   comment
     patterns:

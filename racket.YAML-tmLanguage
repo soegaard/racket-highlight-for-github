@@ -122,13 +122,13 @@ patterns:
 #  name: constant
 #  match: \'\(\)
 
-#- comment: keyword
-#  name: constant
-#  match: \#\:([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
+- comment: keyword
+  name: constant
+  match: \#\:([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
-#- comment: syntax-quoted identifiers   #'name
-#  name: constant
-#  match: \#\'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
+- comment: syntax-quoted identifiers   #'name
+  name: constant
+  match: \#\'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
 ###
 ### IDENTIFIERS 

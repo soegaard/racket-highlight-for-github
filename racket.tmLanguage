@@ -164,7 +164,7 @@
 		<key>sexpcomment</key>
 		<dict>
 			<key>begin</key>
-			<string>\#\;[\s]*\(</string>
+			<string>\#\;[\s\n]*\(</string>
 			<key>contentName</key>
 			<string>comment</string>
 			<key>end</key>

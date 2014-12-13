@@ -44,7 +44,7 @@ repository:
     - include:     $self
       name:        constant
   sexpcomment: 
-    begin:         \#\;[\s]*\(
+    begin:         \#\;[\s\n]*\(
     end:           \)
     name:          comment
     contentName:   comment

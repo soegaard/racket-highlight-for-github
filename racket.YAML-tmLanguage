@@ -51,7 +51,7 @@ repository:
     contentName:   comment
     patterns:
     - include:     "#paren-sexp-comment"
-      name:        comment
+      name:        comment      
   paren-sexp-comment:
     begin:         (?<=\()
     end:           \)
@@ -59,6 +59,15 @@ repository:
     patterns:
     - include:     self
       name:        comment
+  multilinecomment: 
+    begin:         \#\|
+    end:           \|\#
+    name:          comment
+    contentName:   comment
+    patterns:
+    - match:       ([^\|]|\|(?=[^#]))*
+      name:        comment
+
 
 #  number:
 #    comment:   numbers
@@ -72,7 +81,7 @@ patterns:
 - include: '#quotation'
 - include: '#sexpcomment'
 - include: '#number'
-
+- include: '#multilinecomment'
 ###
 ### Each pattern has three components:
 ###

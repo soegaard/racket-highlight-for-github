@@ -23,6 +23,10 @@
 			<string>#number</string>
 		</dict>
 		<dict>
+			<key>include</key>
+			<string>#multilinecomment</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>(\#px|\#rx)?(\#)?\"</string>
 			<key>comment</key>
@@ -166,6 +170,26 @@
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>multilinecomment</key>
+		<dict>
+			<key>begin</key>
+			<string>\#\|</string>
+			<key>contentName</key>
+			<string>comment</string>
+			<key>end</key>
+			<string>\|\#</string>
+			<key>name</key>
+			<string>comment</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>([^\|]|\|(?=[^#]))*</string>
+					<key>name</key>
+					<string>comment</string>
+				</dict>
+			</array>
+		</dict>
 		<key>paren-sexp-comment</key>
 		<dict>
 			<key>begin</key>

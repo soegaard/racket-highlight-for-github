@@ -45,15 +45,15 @@ repository:
       name:        constant
 
   sexpcomment: 
-    begin:         \#\;
-    end:           (?<=\))
+    begin:         \#\;\()
+    end:           \)
     name:          comment
     contentName:   comment
     patterns:
     - include:     "#paren-sexp-comment"
       name:        comment
   paren-sexp-comment:
-    begin:         \(
+    begin:         (?<=\()
     end:           \)
     name:          comment
     patterns:

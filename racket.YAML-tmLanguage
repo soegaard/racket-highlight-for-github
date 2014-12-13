@@ -36,7 +36,7 @@ uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 
 repository:
   quotation: 
-    begin:         \'\(
+    begin:         \'[\s]*\(
     end:           \)
     name:          constant
     contentName:   constant
@@ -44,7 +44,7 @@ repository:
     - include:     $self
       name:        constant
   sexpcomment: 
-    begin:         \#\;\(
+    begin:         \#\;[\s]*\(
     end:           \)
     name:          comment
     contentName:   comment

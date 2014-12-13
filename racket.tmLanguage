@@ -144,7 +144,7 @@
 		<key>quotation</key>
 		<dict>
 			<key>begin</key>
-			<string>\'\(</string>
+			<string>\'[\s]*\(</string>
 			<key>contentName</key>
 			<string>constant</string>
 			<key>end</key>
@@ -164,7 +164,7 @@
 		<key>sexpcomment</key>
 		<dict>
 			<key>begin</key>
-			<string>\#\;\(</string>
+			<string>\#\;[\s]*\(</string>
 			<key>contentName</key>
 			<string>comment</string>
 			<key>end</key>

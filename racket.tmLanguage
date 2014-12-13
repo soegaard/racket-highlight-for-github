@@ -153,6 +153,16 @@
 			<key>name</key>
 			<string>comment</string>
 		</dict>
+		<dict>
+			<key>comment</key>
+			<string>whitespace</string>
+			<key>match</key>
+			<array>
+				<string>\n</string>
+			</array>
+			<key>name</key>
+			<string>whitespace</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>

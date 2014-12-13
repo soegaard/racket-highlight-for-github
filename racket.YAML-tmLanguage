@@ -97,8 +97,6 @@ patterns:
   patterns:
   - name: constant
     match:  ([^"\\]|\\.|\\\\)*
- 
-# Note (?<! re) is negative lookahead. The character before the last can not be a backslash.
 
 
 - comment: booleans #t,#f, #true, or #false followed by a delimiter  (capture the first parenthesis to remove the delimiter)
@@ -219,6 +217,10 @@ patterns:
   name: comment
   match: ;.*$
 
+- comment: whitespace
+  name:    whitespace
+  match:   [ \n]
+  
 
 
 

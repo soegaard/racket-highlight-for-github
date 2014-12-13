@@ -37,10 +37,12 @@ uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 repository:
   quotation: 
     patterns:
-    - begin: \'
-      end:   \'
-      name:    constant
-      match:   ([a-aA-Z0-9])+
+    - begin:   \'\(
+      end:     \)
+      name:    keyword
+      match:   ([a-zA-Z0-9])+
+      captures:
+        '1': {name: keyword}
 
 ## The repository gives names to regular expressions, that can be used later on.
 
@@ -69,7 +71,6 @@ patterns:
 ###
 ### DATUMS  (constant)
 ###
-
 
 # Note: the following does not handle multi line strings.
 - comment: strings, byte strings, regular expressions
@@ -195,7 +196,6 @@ patterns:
   name: comment
   match: ;.*$
 
-- include: '#quotation'
 
 
 

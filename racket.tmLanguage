@@ -23,12 +23,23 @@
 			<string>#number</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>(\#px|\#rx)?(\#)?\"</string>
 			<key>comment</key>
 			<string>strings, byte strings, regular expressions</string>
-			<key>match</key>
-			<string>(\#px|\#rx)?(\#)?\"([^"\\]|(\\")|(\\\\))*"</string>
+			<key>end</key>
+			<string>\"</string>
 			<key>name</key>
 			<string>constant</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>([^"\\]|\\\")*</string>
+					<key>name</key>
+					<string>string</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>comment</key>

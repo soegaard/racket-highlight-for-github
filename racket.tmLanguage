@@ -218,12 +218,6 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>$self</string>
-					<key>name</key>
-					<string>comment</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#paren-sexp-comment</string>
 					<key>name</key>
 					<string>comment</string>

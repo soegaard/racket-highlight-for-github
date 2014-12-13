@@ -43,12 +43,21 @@ repository:
     patterns:
     - include:     $self
       name:        constant
+  sexpcomment: 
+    begin:         \#\;\(
+    end:           \)
+    name:          comment
+    contentName:   comment
+    patterns:
+    - include:     $self
+      name:        comment
 
 
 ## The repository gives names to regular expressions, that can be used later on.
 
 patterns:
 - include: '#quotation'
+- include: '#sexpcomment'
 
 ###
 ### Each pattern has three components:

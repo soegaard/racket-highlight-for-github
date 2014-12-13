@@ -88,6 +88,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>symbol</string>
+			<key>match</key>
+			<string>\'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>keyword</string>
 			<key>match</key>
 			<string>\#\:([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)</string>

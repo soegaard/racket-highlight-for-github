@@ -112,9 +112,9 @@ patterns:
   name: constant
   match: \#void(?=[()\[\]{}",'`;\ \s])
 
-#- comment: symbol
-#  name: constant
-#  match: \'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
+- comment: symbol
+  name: constant
+  match: \'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
  # todo: quoted s-expressions ?
 

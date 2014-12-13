@@ -35,9 +35,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>([^"\\]|\\\"|\\\\|\\[\n])*</string>
+					<string>([^"\\]|\\\"|\\\\)*</string>
 					<key>name</key>
-					<string>string</string>
+					<string>constant</string>
 				</dict>
 			</array>
 		</dict>

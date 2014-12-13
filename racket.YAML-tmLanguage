@@ -95,8 +95,8 @@ patterns:
   begin:   (\#px|\#rx)?(\#)?\"
   end:     \"
   patterns:
-  - name: string
-    match:  ([^"\\]|\\\"|\\\\|\\[\n])*
+  - name: constant
+    match:  ([^"\\]|\\\"|\\\\)*
  
 # Note (?<! re) is negative lookahead. The character before the last can not be a backslash.
 

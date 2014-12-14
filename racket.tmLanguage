@@ -11,22 +11,6 @@
 	<key>patterns</key>
 	<array>
 		<dict>
-			<key>include</key>
-			<string>#quotation</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#sexpcomment</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#number</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#multilinecomment</string>
-		</dict>
-		<dict>
 			<key>begin</key>
 			<string>(\#px|\#rx)?(\#)?\"</string>
 			<key>comment</key>
@@ -119,6 +103,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>quoted empty list</string>
+			<key>match</key>
+			<string>\'\(\)</string>
+			<key>name</key>
+			<string>constant</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>keyword</string>
 			<key>match</key>
 			<string>\#\:([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)</string>
@@ -159,13 +151,11 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>whitespace</string>
+			<false/>
 			<key>match</key>
-			<array>
-				<string>\n</string>
-			</array>
+			<string>\#;</string>
 			<key>name</key>
-			<string>whitespace</string>
+			<string>comment</string>
 		</dict>
 	</array>
 	<key>repository</key>
@@ -191,64 +181,6 @@
 				<dict>
 					<key>match</key>
 					<string>([^\|]|\|(?=[^#]))*</string>
-					<key>name</key>
-					<string>comment</string>
-				</dict>
-			</array>
-		</dict>
-		<key>paren-sexp-comment</key>
-		<dict>
-			<key>begin</key>
-			<string>(?&lt;=\()</string>
-			<key>end</key>
-			<string>(?=\))</string>
-			<key>name</key>
-			<string>comment</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>self</string>
-					<key>name</key>
-					<string>comment</string>
-				</dict>
-			</array>
-		</dict>
-		<key>quotation</key>
-		<dict>
-			<key>begin</key>
-			<string>\'[\s]*\(</string>
-			<key>contentName</key>
-			<string>constant</string>
-			<key>end</key>
-			<string>\)</string>
-			<key>name</key>
-			<string>constant</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-					<key>name</key>
-					<string>constant</string>
-				</dict>
-			</array>
-		</dict>
-		<key>sexpcomment</key>
-		<dict>
-			<key>begin</key>
-			<string>\#\;\(</string>
-			<key>contentName</key>
-			<string>comment</string>
-			<key>end</key>
-			<string>\)</string>
-			<key>name</key>
-			<string>comment</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#paren-sexp-comment</string>
 					<key>name</key>
 					<string>comment</string>
 				</dict>

@@ -34,31 +34,36 @@ uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 ## See the complete list at:  https://github.com/github/linguist/issues/1822 
 
 
-repository:
-  quotation: 
-    begin:         \'[\s]*\(
-    end:           \)
-    name:          constant
-    contentName:   constant
-    patterns:
-    - include:     $self
-      name:        constant
+## Uncomment the rules in the repository and include
+## them in the patterns to experiment.
 
-  sexpcomment: 
-    begin:         \#\;\(
-    end:           \)
-    name:          comment
-    contentName:   comment
-    patterns:
-    - include:     "#paren-sexp-comment"
-      name:        comment      
-  paren-sexp-comment:
-    begin:         (?<=\()
-    end:           (?=\))
-    name:          comment
-    patterns:
-    - include:     self
-      name:        comment
+repository:
+#  quotation: 
+#    begin:         \'[\s]*\(
+#    end:           \)
+#    name:          constant
+#    contentName:   constant
+#    patterns:
+#    - include:     $self
+#      name:        constant
+
+#  sexpcomment: 
+#    begin:         \#\;\(
+#    end:           \)
+#    name:          comment
+#    contentName:   comment
+#    patterns:
+#    - include:     "#paren-sexp-comment"
+#      name:        comment     
+
+#  paren-sexp-comment:
+#    begin:         (?<=\()
+#  end:           (?=\))
+#   name:          comment
+#    patterns:
+#    - include:     $self
+#      name:        comment
+
   multilinecomment: 
     begin:         \#\|
     end:           \|\#
@@ -80,10 +85,9 @@ repository:
 ## The repository gives names to regular expressions, that can be used later on.
 
 patterns:
-- include: '#quotation'
-- include: '#sexpcomment'
-- include: '#number'
-- include: '#multilinecomment'
+#- include: '#quotation'
+#- include: '#sexpcomment'
+#- include: '#multilinecomment'
 ###
 ### Each pattern has three components:
 ###
@@ -107,6 +111,7 @@ patterns:
 ### DATUMS  (constant)
 ###
 
+# XXX 
 # Note: the following does not handle multi line strings.
 - comment: strings, byte strings, regular expressions
   name:    constant
@@ -154,11 +159,9 @@ patterns:
   name: constant
   match: \'([^#()\[\]{}",'`; \s]([^()\[\]{}",'`;\ \s])*)
 
- # todo: quoted s-expressions ?
-
-#- comment: quoted empty list
-#  name: constant
-#  match: \'\(\)
+- comment: quoted empty list
+  name: constant
+  match: \'\(\)
 
 - comment: keyword
   name: constant
@@ -231,9 +234,13 @@ patterns:
   name: comment
   match: ;.*$
 
-- comment: whitespace
-  name:    whitespace
-  match:   [ \n]
+# sexp comment
+#   We punt and color the #; only - the s-exp is ignored
+- comment: #; comment  -  comments out the following s-exp
+  name: comment
+  match: \#;
+
+
 
 
 

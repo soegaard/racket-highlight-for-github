@@ -2,19 +2,7 @@
 
 (module+ test (require rackunit))
 
-(define (wrap s)
-  (define n (string-length s))
-  (~a #\( s #\))
-  ;;; sign the test below doesn't work - the ( and ) needs to 
-  ;;; be in a pair -- that is the test below fails for ()|()
-  #;(if (and (>= n 2) (and (eqv? (string-ref s 0)       #\()
-                           (eqv? (string-ref s (- n 1)) #\))))
-        s
-        (~a #\( s #\))))
-
-#;(module+ test
-    (check-equal? (wrap  "1") "(1)")
-    (check-equal? (wrap "(1)") "(1)"))
+(define (wrap s) (~a #\( s #\)))
 
 (define (emit-re re)
   (define e emit-re)
@@ -29,8 +17,8 @@
     [(list 'not-ahead re)  (~a "(?!" (wrap (e re)) ")")]
     [(list 'sub re)        (~a (wrap (e re)))]
     [(list 'between from to re) (wrap (~a (wrap (e re)) "{" from "," to "}"))]
-    [(list 'bracket name)  (~a "[:" name ":]")]
-    [(list 'ignore-case re) (~a "((?i)(" (e re) "(?-i)))")]
+    [(list 'bracket name)  (~a "[[:" name ":]]")]
+    [(list 'ignore-case re) (~a "((?i)" (e re) "(?-i))")]
     [(? number? n)         (~a n)]
     [(? char? c)           (~a (ch c))]
     [(? string? s)         (~a s)]    
@@ -154,22 +142,22 @@
 (define extflonum? (make-parameter #f))
 
 (define (binary-numbers)
-  (seq (sub (seq (zero-or-more (seq #\# "[bBeEiI]"))
+  (seq (sub (seq #\# (zero-or-more (seq  "[bBeEiI]"))
                  (general-number 2)))
        <delimiter-ahead>))
 
 (define (decimal-numbers)
-  (seq (sub (seq (zero-or-more (seq #\# "[dDeEiI]"))
+  (seq (sub (seq #\# (zero-or-more (seq  "[dDeEiI]"))
                  (general-number 10)))
        <delimiter-ahead>))
 
 (define (octal-numbers)
-  (seq (sub (seq (zero-or-more (seq #\# "[oOeEiI]"))
+  (seq (sub (seq #\# (zero-or-more (seq  "[oOeEiI]"))
                  (general-number 8)))
        <delimiter-ahead>))
 
 (define (hexadecimal-numbers)
-  (seq (sub (seq (zero-or-more (seq #\# "[xXeEiI]"))
+  (seq (sub (seq #\# (zero-or-more (seq  "[xXeEiI]"))
                  (general-number 16)))
        <delimiter-ahead>))
 
@@ -190,7 +178,7 @@
 
 (define <characters>
   (let ()
-    (define names '("nul" "null" "backspace" "tab" "newline" "linefeed"
+    (define names '("null" "nul" "backspace" "tab" "newline" "linefeed"
                           "vtab" "page" "return" "space" "rubout"))
     
     (union 
@@ -201,7 +189,7 @@
      ; unicode hexadecimal
      (seq #\# #\\ #\u (between 1 4 (digit 16)))
      (seq #\# #\\ #\U (between 1 8 (digit 16)))
-     (seq #\# #\\ "." (not-ahead (bracket "alnum"))))))
+     (seq #\# #\\ "." "(?=[^[:alpha:]])"))))
 
 'characters
 (displayln (emit-re <characters>))

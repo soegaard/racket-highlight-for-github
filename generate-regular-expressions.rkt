@@ -60,6 +60,8 @@
     [else
      (error 'char "got: ~a" c)]))
 
+; str : string -> string
+;   escape characters if needed
 (define (str s)
   (apply ~a (map ch (string->list s))))
 

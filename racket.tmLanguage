@@ -11,6 +11,10 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>include</key>
+			<string>#multilinecomment</string>
+		</dict>
+		<dict>
 			<key>begin</key>
 			<string>(\#px|\#rx)?(\#)?\"</string>
 			<key>comment</key>
@@ -147,7 +151,7 @@
 			<key>match</key>
 			<string>;.*$</string>
 			<key>name</key>
-			<string>comment</string>
+			<string>string</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -175,12 +179,6 @@
 				<dict>
 					<key>include</key>
 					<string>#multilinecomment</string>
-					<key>name</key>
-					<string>comment</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>([^\|]|\|(?=[^#]))*</string>
 					<key>name</key>
 					<string>comment</string>
 				</dict>

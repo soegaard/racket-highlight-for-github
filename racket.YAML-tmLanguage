@@ -38,6 +38,16 @@ uuid: c5160d97-e918-473b-a594-3d22afffc0a7
 ## them in the patterns to experiment.
 
 repository:
+  multilinecomment: 
+    begin:         \#\|
+    end:           \|\#
+    name:          comment
+    contentName:   comment
+    patterns:
+    - include:     "#multilinecomment"
+      name:        comment
+
+
 #  quotation: 
 #    begin:         \'[\s]*\(
 #    end:           \)
@@ -64,16 +74,8 @@ repository:
 #    - include:     $self
 #      name:        comment
 
-  multilinecomment: 
-    begin:         \#\|
-    end:           \|\#
-    name:          comment
-    contentName:   comment
-    patterns:
-    - include:     "#multilinecomment"
-      name:        comment
-    - match:       ([^\|]|\|(?=[^#]))*
-      name:        comment
+#    - match:       ([^\|]|\|(?=[^#]))*
+#      name:        comment
 
 
 #  number:
@@ -87,7 +89,7 @@ repository:
 patterns:
 #- include: '#quotation'
 #- include: '#sexpcomment'
-#- include: '#multilinecomment'
+- include: '#multilinecomment'
 ###
 ### Each pattern has three components:
 ###
@@ -231,7 +233,7 @@ patterns:
 
 # line comment
 - comment: ; comments begins with ; and extends to the end of the line
-  name: comment
+  name: string
   match: ;.*$
 
 # sexp comment
@@ -239,7 +241,6 @@ patterns:
 - comment: #; comment  -  comments out the following s-exp
   name: comment
   match: \#;
-
 
 
 
